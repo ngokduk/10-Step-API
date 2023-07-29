@@ -7,19 +7,15 @@ namespace MyWebApiApp.Controllers
     public class TestPathVariablesController : Controller
     {
         [HttpGet]
-        [Route("test-path-variables/{id}/{action}")]
-        public IActionResult TestPathVariables(int id, string action)
+        [Route("test-path-variables/{id}/{name}")]
+        public IActionResult Action(int id ,string name)
         {
-            // Xử lý các path variable tại đây
-            // Ví dụ: Trả về một object JSON chứa các giá trị path variable
-            var result = new
+           var res = new
             {
-                Id = id,
-                Action = action
+                id = id,
+                name = name
             };
-
-            // Trả về JSON data
-            return Ok(result);
+           return Ok(res);
         }
     }
 }
